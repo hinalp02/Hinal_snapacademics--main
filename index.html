@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rare Books Collection | Home</title>
+    <meta name="description" content="A Catalog of Rare Books">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="style.css" />
+    <script src="scripts.js" defer></script>
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="top-buttons">
+            <button onclick="showAllBooks();">Main Menu</button>
+            <button onclick="showFavorites();">Show Favorites</button>
+            <button onclick="clearFavorites();">Clear Favorites</button>
+        </div>
+        <h1 class="title">Rare Books Collection</h1>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search by title or year...">
+            <button onclick="searchBooks()">Search</button>
+        </div>
+    </header>
+    <section class="filter-options">
+        <label for="genre">Filter by Genre:</label>
+        <select id="genre" onchange="filterBooks()">
+            <option value="All">All Genres</option>
+            <option value="Drama">Drama</option>
+            <option value="Religion">Religion</option>
+            <option value="Fantasy">Fantasy</option>
+            <option value="Science Fiction">Science Fiction</option>
+            <option value="Horror">Horror</option>
+        </select>
+    </section>
+    <main id="card-container">
+        <!-- Cards will be dynamically inserted here by the scripts.js file -->
+    </main>
+    <template id="card-template">
+        <article class="card">
+            <div class="card-content">
+                <h2>Book Title</h2>
+                <img src="" alt="Book Cover" class="book-cover">
+                <ul>
+                    <li>Author: <span class="author-name">Author Name</span></li>
+                    <li>Year: <span class="publication-year">Publication Year</span></li>
+                    <li>Genre: <span class="book-genre">Genre</span></li>
+                    <li>Rarity: <span class="book-rarity">Rarity Level</span></li>
+                </ul>
+                <button class="button" onclick="addToFavorites(this)">Add to Favorites</button>
+            </div>
+        </article>
+    </template>
+    <footer class="footer">
+        By: Hinal Patel
+    </footer>
+</body>
+
+</html>
